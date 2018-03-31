@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -86,6 +87,9 @@ public class LoginActivity extends AppCompatActivity {
                     if(cursor.getCount() > 0){
                         cursor.moveToNext();
                         Toast.makeText(getApplicationContext(),"login successfully", Toast.LENGTH_LONG).show();
+                        Intent home = new Intent(LoginActivity.this,HomeActivity.class);
+                        startActivity(home);
+                        finish();
                     }else{
                         Toast.makeText(getApplicationContext(),"error ", Toast.LENGTH_LONG).show();
                     }
